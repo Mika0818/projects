@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+   
+        body{
+            margin: 0;    
+            background-color:#be7052
+        }
+        #all{
+            width: 80%;
+            height: 300vh;
+            margin-right: auto;
+            margin-left: auto;
+ 
+        }
+        #Logo{
+            width: 150px;
+            height: 150px;
+            border-radius: 99px;
+            /*border-radius-圓形  */
+            border: 2px solid #dfe4de;;
+            /* background-color: aquamarine; */
+            background-image: url("https://images.pexels.com/photos/3879070/pexels-photo-3879070.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=150");
+            background-position: center;
+            background-size: cover;
+            box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+            /*  box-shadow-陰影 */
+            position: fixed;
+            left: calc(10% + 30px);
+            top: 10px;
+        }
+        #btn_box{
+            position: fixed;
+            top: 70px;
+            right: calc(10% + 70px);
+             /* 改定位 */
+        }
+        /* #buttonC{
+            margin-right: 0;
+        } */
+        #boxA{
+            background-image: url("https://images.pexels.com/photos/1684915/pexels-photo-1684915.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=940");
+        }
+        #boxB{
+            background-image: url("https://images.pexels.com/photos/3277932/pexels-photo-3277932.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+        }
+        #boxC{
+            background-image: url("https://images.pexels.com/photos/196659/pexels-photo-196659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+        }
+
+    /* ------------------------------------------------------------- */
+    .nav_btn{
+            float: left;
+            background-color:#f1ded1;
+            padding: 0 40px;
+            line-height: 45px;
+            border: 2px solid #dfe4de;
+            box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            margin-right: 10px;
+            text-decoration:none;
+            color: #253f5b;
+            font-weight: bolder;
+        }    
+    .nav_btn:hover{
+            background-color: rgba(31, 85, 129, 0.5);
+            text-shadow: 2px 2px 2px rgba(32, 50, 58, 0.8);
+        }
+        .box_css{
+            width: 100%;
+            height: 50vh;
+            /* background-color: aquamarine; */
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            padding-top: 50vh;
+        }
+        .mask{
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: calc(25vh - 20px) calc(50% - 70px);
+        }
+        .mask_btn{
+            background-color: #8c7462;
+            border-radius: 10px;
+            transition: 0.5s;
+            padding: calc(25px - 11px) calc(75px - 6.5px);
+            color:  #9cb3c5;
+            box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+            /* font-size: larger; */
+            font-weight: bolder;
+        }
+        .mask_btn:hover{
+            background-color:#586c50;
+        }
+    </style>
+</head>
+<body>
+    <div id="all">
+        <div id="Logo"></div>
+        <div id="btn_box">
+            <a id="buttonA" class="nav_btn" href="#boxA">A</a>
+            <a id="buttonB" class="nav_btn" href="#boxB">B</a>
+            <a id="buttonC" class="nav_btn" href="#boxC">C</a>
+            <!-- 錨點 -->
+        </div>
+        <div id="boxA" class="box_css">
+            <div class="mask">
+                <div class="mask_btn"><span>A</span></div>
+            </div>
+        </div>
+        <div id="boxB" class="box_css">
+            <div class="mask">
+                <div class="mask_btn"><span>B</span></div>
+            </div>
+        </div>
+        <div id="boxC" class="box_css">
+            <div class="mask">
+                <div class="mask_btn"><span>C</span></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

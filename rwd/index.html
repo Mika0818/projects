@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RWD-flex</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        a {
+            color: #32435f;
+            font-size: large;
+            text-decoration: none;
+        }
+
+        /* 連結原本的眼色 */
+        a:hover {
+            text-decoration: underline #32435f;
+        }
+
+        /* 點擊時連結的顏色 */
+        a:active {
+            color: palevioletred;
+            text-decoration: underline palevioletred;
+        }
+
+        /* 點擊過後連結的顏色 */
+        a:visited {
+            color: rgb(38, 143, 125);
+        }
+
+        .img_style {
+            background-position: center;
+            background-size: cover;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+            padding: 10px;
+        }
+
+        .display {
+            display: flex;
+        }
+
+        .mask {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            transition: 1s;
+        }
+
+        .mask:hover {
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+        /* ---------------------------------------------------- */
+
+        #menu {
+            width: 300px;
+            height: 100vh;
+            padding: 50px;
+            flex-direction: column;
+            background-color: #d3d6c3;
+            align-items: center;
+        }
+
+        /* flex-direction 就是來改變上圖中的軸線方向，可以將軸線做水平反轉、轉為垂直、垂直反轉等， */
+
+
+
+        #logo {
+            width: 150px;
+            height: 150px;
+            background-image: url('https://ppt.cc/fQuRIx@.jpg');
+            margin: 0 0 35px 0;
+        }
+
+        #context {
+            width: calc(100% - 350px);
+            /*扣掉選單的寬*/
+            height: 100vh;
+            /* background-color: rgb(210, 255, 240); */
+            justify-content: center;
+            align-items: center;
+        }
+
+        #container {
+            width: 990px;
+            height: 500px;
+
+        }
+
+        .box {
+            width: 100%;
+            height: 100%;
+        }
+
+        #boxA {
+            background-image: url('https://images.pexels.com/photos/3895704/pexels-photo-3895704.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+
+        }
+
+        #boxB {
+            background-image: url('https://images.pexels.com/photos/3886315/pexels-photo-3886315.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+            margin: 0 10px;
+        }
+
+
+
+        #boxC {
+            background-image: url('https://images.pexels.com/photos/3226441/pexels-photo-3226441.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+        }
+
+        /* -------------------------------------- */
+
+
+        @media screen and (max-width: 1330px) {
+
+            #container {
+                width: 800px;
+                height: 580px;
+                flex-wrap: wrap;
+            }
+
+
+            #boxA {
+                margin: 0 0 10px 0;
+            }
+
+            #boxB {}
+
+            #boxc {
+                width: calc(50% - 5px);
+         
+            }
+
+            .box {
+                height: calc(50% - 5px);
+                /*寬度一半(50%)扣掉margin一半*/   
+            }
+        }
+
+        @media screen and (max-width: 1165px) {
+            ul {
+                display: flex;
+                /* 橫向選單 */
+            }
+
+            #all {
+                flex-wrap: wrap;
+            }
+
+            #menu {
+                width: 100%;
+                height: 100px;
+                padding: 10px;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            #menu-img {
+                display: none;
+            }
+
+            #logo {
+                width: 80px;
+                height: 80px;
+                margin: unset;
+            }
+
+            #context {
+                width: 100%;
+                height: calc(100vh - 100px);
+                flex-wrap: wrap;
+            }
+
+            #container {
+                width: 700px;
+                height: 800px;
+            }
+        }
+
+        @media screen and (max-width: 699px) {
+            ul {
+                display: unset;
+            }
+
+            #menu {
+                height: 80px;
+                padding: 15px;
+                position: fixed;
+                flex-flow: column wrap;
+                /*為了讓Logo左右置中*/
+                justify-content: center;
+                align-items: unset;
+            }
+
+            #menu-img {
+                width: 40px;
+                height: 40px;
+                background-image: url("https://cdn4.iconfinder.com/data/icons/navigation-40/24/hamburger-menu-512.png");
+                display: unset;
+            }
+
+            #menu-img:hover~#link {
+                /* display: block; */
+                left: 0;
+            }
+
+            #link:hover {
+                /* display: block; */
+                left: 0;
+            }
+
+            #logo {
+                width: 60px;
+                height: 60px;
+                margin-right: 40px;
+                /*為了讓Logo左右置中*/
+            }
+
+            #link {
+                /* display: none; */
+                position: fixed;
+                left: -100px;
+                /*為了讓選單從左邊滑出*/
+                top: 80px;
+                background-color: #e8c7b6;
+                transition: 1s;
+            }
+
+            #context {
+                height: unset;
+                padding-top: 80px;
+                /*fixed的menu高*/
+            }
+
+            #container {
+                width: 100%;
+                height: unset;
+                flex-direction: column;
+            }
+
+            #boxA {
+                margin: unset;
+            }
+
+            #boxB {
+                margin: unset;
+                width: 100%;
+            }
+
+            #boxC {
+                width: 100%;
+            }
+
+            .box {
+                height: 50vh;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="all" class="display">
+        <div id="menu" class="display">
+
+
+
+            <div id="menu-img" class="img_style"></div>
+            <div id="logo" class="img_style"></div>
+            <div id="link">
+                <ul>
+                    <li><a href="#" target="_blank">Love</a></li>
+                    <li><a href="#" target="_blank">&</a></li>
+                    <li><a href="#" target="_blank">Peace</a></li>
+                </ul>
+            </div>
+
+
+        </div>
+        <div id="context" class="display">
+            <div id="container" class="display">
+                <div id="boxA" class="box img_style">
+                    <div class="mask"></div>
+                </div>
+                <div id="boxB" class="box img_style">
+                    <div class="mask"></div>
+                </div>
+                <div id="boxC" class="box img_style">
+                    <div class="mask"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
